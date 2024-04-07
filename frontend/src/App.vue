@@ -1,5 +1,17 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
+
+if (typeof google !== 'undefined') {
+  google.script.run.withSuccessHandler(() => {
+    // 正常に動作したとき
+  }).withFailureHandler((err: Error) => {
+    // error処理
+    console.log(err);
+  }).someFunction('Hello', { name: 'Bob', age: 20 })
+} else {
+  // Vue.js単体で動作している時の処理
+}
+
 </script>
 
 <template>
@@ -21,9 +33,11 @@ import HelloWorld from './components/HelloWorld.vue'
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
 }

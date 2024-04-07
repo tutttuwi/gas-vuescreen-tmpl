@@ -12,7 +12,12 @@
     "build": "yarn run build:frontend && yarn run build:backend",
     "push": "clasp push",
     "open": "clasp open --webapp",
-    "gen-dts": "yarn workspace backend run gen-dts"
+    "open:dev": "clasp open --webapp --deploymentId AKfycbxKJYsDVTxnGdnUR_nK7-7ZmOY-NNjD_Ez9bG0BGCIZfl26Z85_1B_D2rezC8iY72JTeA",
+    "open:prod": "clasp open --webapp --deploymentId AKfycbzPVYCmq_gDNjY6fpXocfrzGjXBVYl26dMr7jzoWYI6Wu2sEROUITGB_x2BSrhA0X5t-w",
+    "gen-dts": "yarn workspace backend run gen-dts",
+    "deploy": "clasp deploy",
+    "deploy:dev": "clasp deploy -i AKfycbxKJYsDVTxnGdnUR_nK7-7ZmOY-NNjD_Ez9bG0BGCIZfl26Z85_1B_D2rezC8iY72JTeA",
+    "deploy:prod": "clasp deploy -i AKfycbzPVYCmq_gDNjY6fpXocfrzGjXBVYl26dMr7jzoWYI6Wu2sEROUITGB_x2BSrhA0X5t-w"
   },
   "private": true,
   "license": "MIT"

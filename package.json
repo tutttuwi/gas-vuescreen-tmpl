@@ -1,0 +1,19 @@
+{
+  "name": "gas-vuescreen-tmpl",
+  "version": "1.0.0",
+  "packageManager": "yarn@4.0.2",
+  "workspaces": [
+    "./backend",
+    "./frontend"
+  ],
+  "scripts": {
+    "build:backend": "yarn workspace backend run build",
+    "build:frontend": "yarn workspace frontend run build",
+    "build": "yarn run build:frontend && yarn run build:backend",
+    "push": "clasp push",
+    "open": "clasp open --webapp",
+    "gen-dts": "yarn workspace backend run gen-dts"
+  },
+  "private": true,
+  "license": "MIT"
+}

@@ -1,0 +1,21 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "packageManager": "yarn@4.0.2",
+  "private": true,
+  "devDependencies": {
+    "@types/google-apps-script": "^1.0.82",
+    "copy-webpack-plugin": "^12.0.2",
+    "fork-ts-checker-webpack-plugin": "^9.0.2",
+    "gas-webpack-plugin": "^2.5.0",
+    "google-script-dts-generator": "1.2.0",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.4.4",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "scripts": {
+    "build": "yarn webpack",
+    "gen-dts": "google-script-dts-generator --sourcesDir . --outputDir ../frontend/src/@types"
+  }
+}

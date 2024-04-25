@@ -15,6 +15,8 @@ if (typeof google !== 'undefined') {
 </script>
 
 <template>
+  <router-link to="/">Home</router-link> ・
+  <router-link to="/hello">Hello</router-link>
   <div>
     <a href="https://vitejs.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
@@ -24,6 +26,7 @@ if (typeof google !== 'undefined') {
     </a>
   </div>
   <HelloWorld msg="Vite + Vue" />
+  <router-view></router-view>
 </template>
 
 <style scoped>

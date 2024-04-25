@@ -20,5 +20,8 @@
     "deploy:prod": "clasp deploy -i AKfycbzPVYCmq_gDNjY6fpXocfrzGjXBVYl26dMr7jzoWYI6Wu2sEROUITGB_x2BSrhA0X5t-w"
   },
   "private": true,
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "clasp": "^1.0.0"
+  }
 }

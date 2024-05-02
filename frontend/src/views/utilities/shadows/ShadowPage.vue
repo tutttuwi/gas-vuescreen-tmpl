@@ -1,4 +1,4 @@
-<!-- <script setup lang="ts">
+<script setup lang="ts">
 import { ref } from 'vue';
 import BaseBreadcrumb from '@/components/shared/BaseBreadcrumb.vue';
 import UiParentCard from '@/components/shared/UiParentCard.vue';
@@ -25,7 +25,8 @@ const breadcrumbs = ref([
       <UiParentCard title="Basic Shadow">
         <v-row justify="center">
           <v-col v-for="n in 25" :key="n" cols="auto">
-            <v-card height="100" width="100" class="mb-5" :class="['d-flex justify-center align-center bg-primary', `elevation-${n}`]">
+            <v-card height="100" width="100" class="mb-5"
+              :class="['d-flex justify-center align-center bg-primary', `elevation-${n}`]">
               <div>{{ n - 1 }}</div>
             </v-card>
           </v-col>
@@ -33,4 +34,4 @@ const breadcrumbs = ref([
       </UiParentCard>
     </v-col>
   </v-row>
-</template> -->
+</template>

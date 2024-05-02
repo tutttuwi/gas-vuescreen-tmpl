@@ -1,4 +1,4 @@
-<!-- <script setup lang="ts">
+<script setup lang="ts">
 import { ref } from 'vue';
 import BaseBreadcrumb from '@/components/shared/BaseBreadcrumb.vue';
 import UiParentCard from '@/components/shared/UiParentCard.vue';
@@ -28,4 +28,4 @@ const breadcrumbs = ref([
       </UiParentCard>
     </v-col>
   </v-row>
-</template> -->
+</template>

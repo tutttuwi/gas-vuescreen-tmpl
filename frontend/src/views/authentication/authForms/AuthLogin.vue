@@ -7,7 +7,7 @@ import { Form } from 'vee-validate';
 const checkbox = ref(false);
 const valid = ref(false);
 const show1 = ref(false);
-//const logform = ref();
+const logform = ref();
 const password = ref('admin123');
 const username = ref('info@codedthemes.com');
 const passwordRules = ref([

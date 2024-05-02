@@ -37,23 +37,24 @@ function clearoptions() {
             <!------------------------------------->
             <!-- Font Family -->
             <!------------------------------------->
-            <!-- <v-card-item class="py-5">
+            <v-card-item class="py-5">
               <v-card-title class="text-subtitle-1 font-weight-medium mb-4">Font Style</v-card-title>
               <v-card-text class="pa-0">
                 <v-radio-group v-model="customizer.fontTheme" hide-details class="custom-font">
-                  <v-radio v-for="font in fontFamily" :key="font" :label="font" :value="font" color="primary" class="mb-5"></v-radio>
+                  <v-radio v-for="font in fontFamily" :key="font" :label="font" :value="font" color="primary"
+                    class="mb-5"></v-radio>
                 </v-radio-group>
               </v-card-text>
-            </v-card-item> -->
+            </v-card-item>
             <!------------------------------------->
             <!-- end Font Family -->
             <!------------------------------------->
-            <!-- <v-divider></v-divider> -->
+            <v-divider></v-divider>
             <!------------------------------------->
             <!------------------------------------->
             <!-- Input Outlined With Filled -->
             <!------------------------------------->
-            <!-- <div class="d-flex justify-space-between align-center pa-5">
+            <div class="d-flex justify-space-between align-center pa-5">
               <div class="text-subtitle-1 font-weight-medium">Input Background</div>
               <div>
                 <v-radio-group class="custom-radio input-radio ma-n2" v-model="customizer.inputBg" hide-details>
@@ -62,7 +63,7 @@ function clearoptions() {
                 </v-radio-group>
               </div>
             </div>
-            <v-divider></v-divider> -->
+            <v-divider></v-divider>
             <!------------------------------------->
             <!-- End Input Outlined With Filled -->
             <!------------------------------------->

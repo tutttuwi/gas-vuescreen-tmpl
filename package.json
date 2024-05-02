@@ -11,7 +11,7 @@
     "build:frontend": "yarn workspace frontend run build",
     "build": "yarn run build:frontend && yarn run build:backend",
     "push": "clasp push",
-    "open": "clasp open --webapp",
+    "open": "clasp open --webapp --deploymentId AKfycbzIDS-1IW_YFKWgerropr0M19qVHs9wNvLOOM-G0FwM",
     "open:dev": "clasp open --webapp --deploymentId AKfycbxKJYsDVTxnGdnUR_nK7-7ZmOY-NNjD_Ez9bG0BGCIZfl26Z85_1B_D2rezC8iY72JTeA",
     "open:prod": "clasp open --webapp --deploymentId AKfycbzPVYCmq_gDNjY6fpXocfrzGjXBVYl26dMr7jzoWYI6Wu2sEROUITGB_x2BSrhA0X5t-w",
     "gen-dts": "yarn workspace backend run gen-dts",

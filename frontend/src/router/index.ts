@@ -8,7 +8,8 @@ export const router = createRouter({
   routes: [
     {
       path: '/:pathMatch(.*)*',
-      component: () => import('@/views/pages/maintenance/error/Error404Page.vue')
+      // component: () => import('@/views/pages/maintenance/error/Error404Page.vue')
+      component: () => import('@/views/pages/loading/LoadingPage.vue')
       // component: () => import('@/layouts/full/FullLayout.vue')
     },
     MainRoutes

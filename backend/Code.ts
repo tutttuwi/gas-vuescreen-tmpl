@@ -12,6 +12,11 @@ global.doGet = () => {
     .addMetaTag("viewport", "width=device-width, initial-scale=1");
 };
 
+global.getUserEmail = () => {
+  const userData = Session.getActiveUser();
+  return userData.getEmail();
+};
+
 /**
  * @version 1.0.0
  */

@@ -6,6 +6,21 @@ import { useAuthStore } from '@/stores/auth';
 const swt1 = ref(true);
 const swt2 = ref(false);
 const authStore = useAuthStore();
+
+const refUserEmail = ref("");
+google.script.run.withSuccessHandler((userEmail) => {
+  refUserEmail.value = userEmail;
+}).withFailureHandler(() => { }).getUserEmail();
+
+
+// ---------------------------------------------
+if (typeof google !== 'undefined') {
+  // GAS WebAppとして動作時
+
+} else {
+  // vue.js単体動作時
+}
+
 </script>
 
 <template>
@@ -13,10 +28,11 @@ const authStore = useAuthStore();
   <!-- profile DD -->
   <!-- ---------------------------------------------- -->
   <div class="pa-4">
-    <h4 class="mb-n1">Good Morning, <span class="font-weight-regular">John Doe</span></h4>
+    <h4 class="mb-n1">Good Morning, <span class="font-weight-regular">{{ refUserEmail }}</span></h4>
     <span class="text-subtitle-2 text-medium-emphasis">Project admin</span>
 
-    <v-text-field persistent-placeholder placeholder="Search" class="my-3" color="primary" variant="outlined" hide-details>
+    <v-text-field persistent-placeholder placeholder="Search" class="my-3" color="primary" variant="outlined"
+      hide-details>
       <template v-slot:prepend-inner>
         <SearchIcon stroke-width="1.5" size="20" class="text-lightText SearchIcon" />
       </template>
@@ -26,8 +42,11 @@ const authStore = useAuthStore();
     <perfect-scrollbar style="height: calc(100vh - 300px); max-height: 515px">
       <div class="bg-lightwarning rounded-md pa-5 my-3 circle sm-circle lg-circle">
         <h4>Upgrade your plan</h4>
-        <h6 class="text-subtitle-2 text-medium-emphasis mr-11 pr-11 mb-3 mt-2">70% discount for 1 years subscriptions.</h6>
-        <v-btn color="warning" variant="flat" target="_" href="https://codedthemes.com/item/berry-vue-admin-dashboard/"> Go Premium </v-btn>
+        <h6 class="text-subtitle-2 text-medium-emphasis mr-11 pr-11 mb-3 mt-2">70% discount for 1 years subscriptions.
+        </h6>
+        <v-btn color="warning" variant="flat" target="_" href="https://codedthemes.com/item/berry-vue-admin-dashboard/">
+          Go
+          Premium </v-btn>
       </div>
 
       <v-divider></v-divider>

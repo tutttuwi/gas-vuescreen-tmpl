@@ -117,6 +117,16 @@ rem 問題なく画面を開くことができたら完了
     )
 ```
 
+### ロゴ修正
+
+- 以下に記載されているsvgファイルを設定したいものに差し替える
+  - `frontend/src/layouts/full/logo/LogoDark.vue`
+
+### フッター修正
+
+- 以下ファイル修正
+  - `frontend/src/layouts/full/footer/FooterPanel.vue`
+
 
 
 

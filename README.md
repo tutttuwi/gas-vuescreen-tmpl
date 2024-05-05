@@ -102,4 +102,21 @@ yarn run open
 rem 問題なく画面を開くことができたら完了
 ```
 
+## Customize
+
+### ファビコン設定
+
+- ファビコン設定したいpngファイルをGoogleドライブにアップロード
+- ファイル共有からファイルIDを取得
+- 下記形式で`backend/Code.ts`の以下の行を変更
+  - <https://drive.google.com/uc?id=[ファイルID]&.png>
+
+```ts
+    .setFaviconUrl(
+      "https://drive.google.com/uc?id=1HOlf2gOMPAS6IECjttZmzQDqkzpV9GBC&.png",
+    )
+```
+
+
+
 

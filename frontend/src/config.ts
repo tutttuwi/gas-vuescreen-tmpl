@@ -4,6 +4,7 @@ export type ConfigProps = {
   mini_sidebar: boolean;
   fontTheme: string;
   inputBg: boolean;
+  i18n: string;
 };
 
 const config: ConfigProps = {
@@ -11,7 +12,8 @@ const config: ConfigProps = {
   Customizer_drawer: false,
   mini_sidebar: false,
   fontTheme: 'Roboto',
-  inputBg: false
+  inputBg: false,
+  i18n: 'ja'
 };
 
 export default config;

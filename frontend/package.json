@@ -11,7 +11,8 @@
     "build-prod": "vue-tsc --noEmit && vite build --base=/vue/free/",
     "preview": "vite preview --port 5050",
     "typecheck": "vue-tsc --noEmit",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "bp": "vue-tsc --noEmit && vite build && vite preview --port 5050"
   },
   "dependencies": {
     "@tiptap/starter-kit": "2.2.2",

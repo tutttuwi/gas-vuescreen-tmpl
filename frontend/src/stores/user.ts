@@ -1,6 +1,16 @@
 import { defineStore } from 'pinia';
 import { Axios } from 'axios';
-const axios = new Axios();
+const axios = new Axios({
+  baseURL: 'https://script.google.com/macros/s/AKfycbzIDS-1IW_YFKWgerropr0M19qVHs9wNvLOOM-G0FwM',
+  headers: {
+    'Content-Type': 'application/x-www-form-urlencoded',
+    'Access-Control-Allow-Origin': '*'
+  }
+});
+// axios.defaults.baseURL = 'https://script.google.com/macros/s/AKfycbzIDS-1IW_YFKWgerropr0M19qVHs9wNvLOOM-G0FwM';
+// axios.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8';
+// axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
+
 export const useUserStore = defineStore({
   id: 'user',
   state: () => ({
@@ -13,6 +23,7 @@ export const useUserStore = defineStore({
     async fetchGasInfo() {
       let userInfo: any = {};
       if (typeof google !== 'undefined') {
+        console.log('GAS環境');
         google.script.run
           .withSuccessHandler((userEmail) => {
             userInfo.email = userEmail;
@@ -20,10 +31,17 @@ export const useUserStore = defineStore({
           .withFailureHandler(() => {})
           .getUserEmail();
       } else {
-        const res = await axios.get(
-          'https://script.google.com/macros/s/AKfycbzIDS-1IW_YFKWgerropr0M19qVHs9wNvLOOM-G0FwM/exec?func=getUserEmail'
-        );
-        console.log(res);
+        console.log('GAS以外環境');
+        const res = await axios
+          .get(`/exec?func=getUserEmail`)
+          .then((res) => {
+            console.log('レスポンス（axios）：', res);
+            return res;
+          })
+          .catch((err) => {
+            console.log('エラー情報：', err);
+          });
+        console.log('レスポンス：', res);
       }
       // update pinia state
       this.user = userInfo;

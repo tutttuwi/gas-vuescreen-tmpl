@@ -7,7 +7,8 @@ global.doGet = (e: GoogleAppsScript.Events.AppsScriptHttpRequestEvent) => {
   // TODO: 文字列チェック [evalFunc] 不正な文字列が含まれていたら弾く必要がある
   if (evalFunc) {
     try {
-      return eval(evalFunc + "()");
+      const response: Object = eval(evalFunc + "()");
+      return global.createResponse(response, e.parameter.callback);
     } catch (error) {
       console.log(error);
       return global.responseError();
@@ -47,11 +48,30 @@ global.getUserEmail = () => {
   const response = {
     email: userData.getEmail(),
   };
+
+  return response;
+};
+
+global.createResponse = (response: Object, callback: Function) => {
   const payload = JSON.stringify(response);
 
-  const output = ContentService.createTextOutput();
-  output.setMimeType(ContentService.MimeType.JSON);
-  output.setContent(payload);
+  // @ts-ignore
+  const output = ContentService.createTextOutput({
+    stauts: 200,
+    message: "success",
+    header: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Credentials": true,
+      "Content-Type": "application/json; charset=UTF-8",
+    },
+  });
+  if (callback) {
+    output.setMimeType(ContentService.MimeType.JAVASCRIPT);
+    output.setContent(payload);
+  } else {
+    output.setMimeType(ContentService.MimeType.JSON);
+    output.setContent(payload);
+  }
   return output;
 };
 

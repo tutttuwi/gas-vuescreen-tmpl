@@ -1,12 +1,16 @@
 import { defineStore } from 'pinia';
 import { Axios } from 'axios';
 const axios = new Axios({
-  baseURL: 'https://script.google.com/macros/s/AKfycbzIDS-1IW_YFKWgerropr0M19qVHs9wNvLOOM-G0FwM',
-  headers: {
-    'Content-Type': 'application/x-www-form-urlencoded',
-    'Access-Control-Allow-Origin': '*'
-  }
+  baseURL: 'https://script.google.com/macros/s/AKfycbzIDS-1IW_YFKWgerropr0M19qVHs9wNvLOOM-G0FwM'
+  // baseURL: 'https://script.google.com/macros/s/AKfycbzPVYCmq_gDNjY6fpXocfrzGjXBVYl26dMr7jzoWYI6Wu2sEROUITGB_x2BSrhA0X5t-w',
+  // headers: {
+  //   'Content-Type': 'text/plain'
+  //   // 'Access-Control-Allow-Origin': '*',
+  //   // crossDomain: true
+  // }
 });
+axios.options;
+
 // axios.defaults.baseURL = 'https://script.google.com/macros/s/AKfycbzIDS-1IW_YFKWgerropr0M19qVHs9wNvLOOM-G0FwM';
 // axios.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8';
 // axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
@@ -33,6 +37,7 @@ export const useUserStore = defineStore({
       } else {
         console.log('GAS以外環境');
         const res = await axios
+          // @ts-ignore
           .get(`/exec?func=getUserEmail`)
           .then((res) => {
             console.log('レスポンス（axios）：', res);

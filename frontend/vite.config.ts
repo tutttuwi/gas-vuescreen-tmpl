@@ -7,6 +7,8 @@ import { viteSingleFile } from 'vite-plugin-singlefile';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import { resolve } from 'path';
 
+import basicSsl from '@vitejs/plugin-basic-ssl';
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -22,7 +24,8 @@ export default defineConfig({
     }),
     // テンプレート側設定
     viteSingleFile(),
-    tsconfigPaths({ loose: true }) // ref: https://github.com/aleclarson/vite-tsconfig-paths/issues/60 {loose: true}を追加してエイリアスを設定する
+    tsconfigPaths({ loose: true }), // ref: https://github.com/aleclarson/vite-tsconfig-paths/issues/60 {loose: true}を追加してエイリアスを設定する
+    basicSsl()
   ],
   resolve: {
     alias: {

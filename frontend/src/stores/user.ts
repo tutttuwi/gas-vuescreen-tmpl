@@ -36,17 +36,18 @@ export const useUserStore = defineStore({
           .getUserEmail();
       } else {
         console.log('GAS以外環境');
-        const res = await axios
-          // @ts-ignore
-          .get(`/exec?func=getUserEmail`)
-          .then((res) => {
-            console.log('レスポンス（axios）：', res);
-            return res;
-          })
-          .catch((err) => {
-            console.log('エラー情報：', err);
-          });
-        console.log('レスポンス：', res);
+        // const res = await axios
+        //   // @ts-ignore
+        //   .get(`/exec?func=getUserEmail`)
+        //   .then((res) => {
+        //     console.log('レスポンス（axios）：', res);
+        //     return res;
+        //   })
+        //   .catch((err) => {
+        //     console.log('エラー情報：', err);
+        //   });
+        // console.log('レスポンス：', res);
+        userInfo.email = 'non-gas-env-dummy@example.com';
       }
       // update pinia state
       this.user = userInfo;

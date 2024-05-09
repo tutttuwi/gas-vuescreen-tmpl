@@ -29,8 +29,8 @@ export const useUserStore = defineStore({
       if (typeof google !== 'undefined') {
         console.log('GAS環境');
         google.script.run
-          .withSuccessHandler((userEmail) => {
-            userInfo.email = userEmail;
+          .withSuccessHandler((res) => {
+            userInfo.email = res.email;
           })
           .withFailureHandler(() => {})
           .getUserEmail();

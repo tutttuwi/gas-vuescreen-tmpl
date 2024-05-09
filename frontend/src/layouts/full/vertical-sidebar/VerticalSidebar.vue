@@ -14,17 +14,8 @@ const sidebarMenu = shallowRef(sidebarItems);
 </script>
 
 <template>
-  <v-navigation-drawer
-    left
-    v-model="customizer.Sidebar_drawer"
-    elevation="0"
-    rail-width="75"
-    mobile-breakpoint="lg"
-    app
-    class="leftSidebar"
-    :rail="customizer.mini_sidebar"
-    expand-on-hover
-  >
+  <v-navigation-drawer left v-model="customizer.Sidebar_drawer" elevation="0" rail-width="75" mobile-breakpoint="lg" app
+    class="leftSidebar" :rail="customizer.mini_sidebar" expand-on-hover>
     <!---Logo part -->
 
     <div class="pa-5">
@@ -48,9 +39,12 @@ const sidebarMenu = shallowRef(sidebarItems);
           <!---End Single Item-->
         </template>
       </v-list>
-      <div class="pa-4">
+
+      <!-- MEMO: Upgade To Pro を非表示 -->
+      <!-- <div class="pa-4">
         <ExtraBox />
-      </div>
+      </div> -->
+
       <div class="pa-4 text-center">
         <v-chip color="inputBorder" size="small"> v1.1.0 </v-chip>
       </div>

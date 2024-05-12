@@ -127,6 +127,8 @@ rem 問題なく画面を開くことができたら完了
 - 以下ファイル修正
   - `frontend/src/layouts/full/footer/FooterPanel.vue`
 
+### ログインページ／認証設定
 
+- Googleアカウントの認証制御を想定しているため、コメントアウトしています。
 
 
